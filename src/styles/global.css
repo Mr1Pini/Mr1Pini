@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
+}
+
+header {
+    background: #4b2816;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul img {
+    width: 40px;
+    height: auto;
+    margin-right: 23px;
+}
+
+nav ul li {
+    margin: 0 23px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #ca3939;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background: #ed0d0d;
+    border-radius: 5px;
+}
+
+.user-greeting {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.3s;
+}
+  
+.nav-link:hover {
+    background: #ca3939;
+    border-radius: 5px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.modal-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+  
+.modal-buttons button {
+    margin: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+  
+.modal-buttons button:first-child {
+    background-color: #e74c3c;
+    color: white;
+}
+  
+.modal-buttons button:last-child {
+    background-color: #3498db;
+    color: white;
+}
+  
+  
+footer {
+    background: #4b2816;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-event {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-booking {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-booking h3,
+.dark-booking p,
+.dark-booking strong {
+    color: #fff;
+}
+
+.dark-text strong {
+    color: #fff !important;
+}
+
+.dark-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-modal-content {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-modal-content input,
+.dark-modal-content select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.theme-toggle {
+    margin-left: auto;
+}
+
+.theme-toggle-btn {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background: #b10101;
+}
+
+
+/*стилі для середньої оцінки*/
+.rating-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 6px;
+    margin-top: 8px;
+  }
+  
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
