@@ -11,11 +11,13 @@ let serviceAccount;
 if (process.env.FIREBASE_CONFIG) {
   // На хостингу: читаємо з змінної середовища
   serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
+  console.log("Service Account з змінної середовища:", serviceAccount); 
 } else {
   // Локально: читаємо з файлу
   serviceAccount = JSON.parse(
     await readFile(join(__dirname, '../serviceAccountKey.json'))
   );
+  console.log("Service Account з файлу:", serviceAccount);
 }
 
 const adminApp = initializeApp({
