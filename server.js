@@ -12,7 +12,10 @@ const port = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors());
+app.use(cors({
+  origin: true,       // Reflects the request origin
+  credentials: true   // Allows cookies and credentials
+}));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
