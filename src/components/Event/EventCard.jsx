@@ -31,7 +31,8 @@ const EventCard = ({ event }) => {
     
         const fetchRatings = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/events/${event.id}/ratings?page=${currentPage}`);
+                const apiUrl = import.meta.env.VITE_API_BASE_URL;
+                const response = await fetch(`${apiUrl}/api/events/${event.id}/ratings?page=${currentPage}`);
                 const data = await response.json();
                 
                 if (data.success) {
