@@ -1,0 +1,4 @@
+routes:
+  - type: rewrite
+    source: /.*        # Matches everything
+    destination: /index.html
