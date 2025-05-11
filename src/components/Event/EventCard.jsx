@@ -34,11 +34,6 @@ const EventCard = ({ event }) => {
                 const apiUrl = import.meta.env.VITE_API_BASE_URL;
                 console.log(apiUrl)
                 const response = await fetch(`${apiUrl}/api/events/${event.id}/ratings?page=${currentPage}`);
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server returned ${response.status}: ${errorText}`);
-                }
                 const data = await response.json();
                 
                 if (data.success) {
