@@ -81,7 +81,7 @@ const EventCard = ({ event }) => {
                     onAverageRatingChange={(newAvg) => setAverageRating(newAvg)}
                     onRatingsChange={(newRatings) => setRatings(newRatings)}
                 />
-                <span>({averageRating || '—'})</span>
+                <span>Середня оцінка: ({averageRating || '—'})</span>
                 <button 
                     className="toggle-ratings"
                     onClick={() => setShowRatings(!showRatings)}
@@ -94,11 +94,16 @@ const EventCard = ({ event }) => {
                 <div className="ratings-container">
                     <h4>Відгуки:</h4>
                     <ul className="ratings-list">
-                        {ratings.map((rating, index) => (
-                            <li key={index}>
-                                <span className="rating-user">Користувач: {rating.email}</span>
-                                <span className="rating-value">Оцінка: {rating.rating} ⭐</span>
-                            </li>
+                        {ratings.map(rating => (
+                            <div key={rating.userId + rating.eventId} style={{ marginBottom: '12px' }}>
+                                <li>
+                                    <span className="rating-user">Користувач: {rating.email}</span>
+                                    <span className="rating-value">Оцінка: {rating.rating} ⭐</span>
+                                </li>
+                                {rating.comment && (
+                                <div style={{ marginTop: '4px' }}>{rating.comment}</div>
+                                )}
+                            </div>
                         ))}
                     </ul>
                     

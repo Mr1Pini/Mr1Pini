@@ -84,7 +84,7 @@ app.get('/api/events/:eventId/ratings', async (req, res) => {
 app.post('/api/events/:eventId/rate', async (req, res) => {
   try {
     const { eventId } = req.params;
-    const { userId, rating } = req.body;
+    const { userId, rating, comment } = req.body;
 
     if (!userId || !rating || rating < 1 || rating > 5) {
       return res.status(400).json({ success: false, message: 'Invalid data' });
@@ -98,6 +98,7 @@ app.post('/api/events/:eventId/rate', async (req, res) => {
       await ratingRef.set({
         ...docSnap.data(),
         rating,
+        comment,
         updatedAt: now
       });
     } else {
@@ -105,6 +106,7 @@ app.post('/api/events/:eventId/rate', async (req, res) => {
         eventId,
         userId,
         rating,
+        comment,
         createdAt: now,
         updatedAt: now
       });
@@ -117,6 +119,7 @@ app.post('/api/events/:eventId/rate', async (req, res) => {
       .get();
 
     const ratings = [];
+    const userIds = new Set();
     snapshot.forEach(doc => ratings.push(doc.data()));
     const avgRating = ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length;
 
